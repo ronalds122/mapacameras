@@ -2,18 +2,18 @@ var userPadrao = "admin";
 var senhaPadrao = "admin";
 
 function login() {
-var user = document.getElementById("username").value;
-var pass = document.getElementById("password").value;
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
 
-if (user === userPadrao && pass === senhaPadrao) {
-    document.getElementById("loginScreen").style.display = "none";
-    document.getElementById("map").style.display = "block";
-    document.getElementById("sidebar").style.display = "block";
+    if (user === userPadrao && pass === senhaPadrao) {
+        document.getElementById("loginScreen").style.display = "none";
+        document.getElementById("map").style.display = "block";
+        document.getElementById("sidebar").style.display = "block";
 
-    iniciarMapa();
-} else {
-    document.getElementById("errorMsg").style.display = "block";
-}
+        iniciarMapa();
+    } else {
+        document.getElementById("errorMsg").style.display = "block";
+    }
 }
 
 document.addEventListener("keydown", function(e) {
