@@ -2,18 +2,18 @@ var userPadrao = "admin";
 var senhaPadrao = "admin";
 
 function login() {
-    var user = document.getElementById("username").value;
-    var pass = document.getElementById("password").value;
+var user = document.getElementById("username").value;
+var pass = document.getElementById("password").value;
 
-    if (user === userPadrao && pass === senhaPadrao) {
-        document.getElementById("loginScreen").style.display = "none";
-        document.getElementById("map").style.display = "block";
-        document.getElementById("sidebar").style.display = "block";
+if (user === userPadrao && pass === senhaPadrao) {
+    document.getElementById("loginScreen").style.display = "none";
+    document.getElementById("map").style.display = "block";
+    document.getElementById("sidebar").style.display = "block";
 
-        iniciarMapa();
-    } else {
-        document.getElementById("errorMsg").style.display = "block";
-    }
+    iniciarMapa();
+} else {
+    document.getElementById("errorMsg").style.display = "block";
+}
 }
 
 document.addEventListener("keydown", function(e) {
@@ -154,6 +154,13 @@ var setores = {
             { nome: "Cam 28", setor: "Moara", coordenada: [328, 1413], preview: "previews/cam28_moara.jpg" }
         ]
     }
+     Distribuição: {
+        planta: "planta_distribuicao.png",
+        w: 2000,
+        h: 1200,
+        cameras: [
+            { nome: "Câmera 9",  setor: "Distribuicao", coordenada: [988, 442], preview: "previews/cam9_distribuicao.jpg" },
+            { nome: "Câmera 10", setor: "Distribuicao", coordenada: [945, 444], preview: "previews/cam10_distribuicao.jpg" },
 };
 
 var cameraIcon = L.divIcon({
