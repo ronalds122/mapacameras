@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Câmeras - Rancheiro</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="./src/css/style.css">
+
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="loginScreen" id="loginScreen">
+    <div class="loginBox">
+        <img src="icons/logo.webp" alt="Logo">
+        <h2>Login - Sistema CFTV</h2>
+
+        <input type="text" id="username" placeholder="Usuário">
+        <input type="password" id="password" placeholder="Senha">
+
+        <button onclick="login()">Entrar</button>
+
+        <div class="errorMsg" id="errorMsg">Usuário ou senha incorretos!</div>
+    </div>
+</div>
+
+<!-- MENU -->
+<div class="sidebar" id="sidebar">
+    <img src="icons/logo.webp" alt="Logo da Empresa">
+
+    <h3>Mapa de Câmeras</h3>
+    <p>Selecione um setor para visualizar.</p>
+
+    <select id="sectorSelect">
+        <option value="adm">Administrativo</option>
+        <option value="recepcao">Recepção</option>
+        <option value="recepcao2">Recepção 2</option>
+        <option value="portaria">Portaria</option>
+        <option value="wafer">Wafer</option>
+        <option value="robo">Robô</option>
+        <option value="cafe">Café</option>
+        <option value="cracker">Cracker</option>
+        <option value="distribuicao">Distribuição</option>
+        <option value="loja">Loja</option>
+        <option value="moara">Moara</option>
+    </select>
+</div>
+
+<!-- MAPA -->
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="src/js/index.js"></script>
+
+</body>
+</html>
