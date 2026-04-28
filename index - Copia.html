@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Câmeras - Rancheiro</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Tela de login */
+        .loginScreen {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loginBox {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.6);
+        }
+
+        .loginBox img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .loginBox h2 {
+            margin: 10px 0;
+        }
+
+        .loginBox input {
+            width: 90%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        .loginBox button {
+            width: 95%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: none;
+            background: black;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .loginBox button:hover {
+            background: #333;
+        }
+
+        .errorMsg {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* MAPA */
+        #map {
+            width: 100%;
+            height: 100vh;
+            display: none;
+        }
+
+        /* Menu lateral */
+        .sidebar {
+            position: absolute;
+            z-index: 999;
+            top: 10px;
+            left: 10px;
+            width: 280px;
+            background: rgba(0,0,0,0.75);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+            display: none;
+        }
+
+        .sidebar img {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            background: white;
+            padding: 6px;
+            object-fit: contain;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .sidebar p {
+            margin: 8px 0 10px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .sidebar select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            font-size: 15px;
+            outline: none;
+        }
+
+        /* Botão alternar externo/interno */
+        #toggleViewBtn {
+            margin-top: 12px;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background: white;
+            color: black;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #toggleViewBtn:hover {
+            background: #ddd;
+        }
+
+        /* Popup maior */
+        .leaflet-popup-content {
+            font-size: 16px;
+            width: 380px !important;
+        }
+
+        .leaflet-popup-content b {
+            font-size: 18px;
+        }
+
+        /* Painel de coordenadas */
+        .coordsBox {
+            position: absolute;
+            z-index: 999;
+            background: rgba(255,255,255,0.95);
+            color: black;
+            padding: 12px;
+            bottom: 15px;
+            left: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            border: 2px solid black;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+            min-width: 260px;
+            display: none;
+        }
+
+        .coordsBox b {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="loginScreen" id="loginScreen">
+    <div class="loginBox">
+        <img src="icons/logo.webp" alt="Logo">
+        <h2>Login - Sistema CFTV</h2>
+
+        <input type="text" id="username" placeholder="Usuário">
+        <input type="password" id="password" placeholder="Senha">
+
+        <button onclick="login()">Entrar</button>
+
+        <div class="errorMsg" id="errorMsg">Usuário ou senha incorretos!</div>
+    </div>
+</div>
+
+<!-- MENU -->
+<div class="sidebar" id="sidebar">
+    <img src="icons/logo.webp" alt="Logo da Empresa">
+
+    <h3>Mapa de Câmeras</h3>
+    <p>Selecione um setor para visualizar.</p>
+
+    <select id="sectorSelect">
+        <option value="adm">Administrativo</option>
+        <option value="recepcao">Recepção</option>
+        <option value="recepcao2">Recepção 2</option>
+        <option value="portaria">Portaria</option>
+        <option value="wafer">Wafer</option>
+        <option value="robo">Robô</option>
+        <option value="cafe">Café</option>
+        <option value="cracker">Cracker</option>
+        <option value="loja">Loja</option>
+        <option value="moara">Moara</option>
+    </select>
+
+    <button id="toggleViewBtn">🔁 Alternar para Externo</button>
+</div>
+
+<!-- COORDENADAS -->
+<div class="coordsBox" id="coordsBox">
+    <b>Coordenadas:</b><br>
+    Passe o mouse ou clique no mapa.
+</div>
+
+<!-- MAPA -->
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+    var userPadrao = "admin";
+    var senhaPadrao = "admin";
+
+    function login() {
+        var user = document.getElementById("username").value;
+        var pass = document.getElementById("password").value;
+
+        if (user === userPadrao && pass === senhaPadrao) {
+            document.getElementById("loginScreen").style.display = "none";
+            document.getElementById("map").style.display = "block";
+            document.getElementById("sidebar").style.display = "block";
+            document.getElementById("coordsBox").style.display = "block";
+
+            iniciarMapa();
+        } else {
+            document.getElementById("errorMsg").style.display = "block";
+        }
+    }
+
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+            login();
+        }
+    });
+
+    var map;
+    var plantaAtual = null;
+    var marcadores = [];
+
+    var modoVisualizacao = "interno"; // interno ou externo
+    var setorAtual = "adm";
+
+    function iniciarMapa() {
+
+        map = L.map('map', {
+            crs: L.CRS.Simple
+        });
+
+        var setores = {
+
+            adm: {
+                interno: "planta_adm.png",
+                externo: "satelite_adm.png",
+                w: 2000,
+                h: 1200,
+                cameras: [
+                    { nome: "Câmera 15", setor: "Administrativo", coordenada: [684, 1444], preview: "previews/cam15.jpg" },
+                    { nome: "Câmera 16", setor: "Administrativo", coordenada: [304, 1135], preview: "previews/cam16.jpg" },
+                    { nome: "Câmera 12", setor: "Administrativo", coordenada: [600, 429], preview: "previews/cam12.jpg" },
+                    { nome: "Câmera 13", setor: "Administrativo", coordenada: [614, 367], preview: "previews/cam13.jpg" },
+                    { nome: "Câmera 14", setor: "Administrativo", coordenada: [644, 382], preview: "previews/cam14.jpg" },
+                    { nome: "Câmera 8", setor: "Administrativo", coordenada: [415, 813], preview: "previews/cam8.jpg" },
+                    { nome: "Câmera 9", setor: "Administrativo", coordenada: [350, 933], preview: "previews/cam9.jpg" },
+                    { nome: "Câmera 5", setor: "Administrativo", coordenada: [457, 778], preview: "previews/cam5.jpg" },
+                    { nome: "Câmera 4", setor: "Administrativo", coordenada: [495, 829], preview: "previews/cam4.jpg" },
+                    { nome: "Câmera 7", setor: "Administrativo", coordenada: [967, 916], preview: "previews/cam7.jpg" },
+                    { nome: "Câmera 6", setor: "Administrativo", coordenada: [947, 901], preview: "previews/cam6.jpg" },
+                    { nome: "Câmera 2", setor: "Administrativo", coordenada: [843, 670], preview: "previews/cam2.jpg" },
+                    { nome: "Câmera 1", setor: "Administrativo", coordenada: [803, 1201], preview: "previews/cam1.jpg" },
+                    { nome: "Câmera 3", setor: "Administrativo", coordenada: [810, 1078], preview: "previews/cam3.jpg" }
+                ]
+            },
+
+            recepcao:  { interno: "planta_recepcao.png",  externo: "satelite_recepcao.png",  w: 2000, h: 1200, cameras: [] },
+            recepcao2: { interno: "planta_recepcao2.png", externo: "satelite_recepcao2.png", w: 2000, h: 1200, cameras: [] },
+            portaria:  { interno: "planta_portaria.png",  externo: "satelite_portaria.png",  w: 2000, h: 1200, cameras: [] },
+            wafer:     { interno: "planta_wafer.png",     externo: "satelite_wafer.png",     w: 2000, h: 1200, cameras: [] },
+            robo:      { interno: "planta_robo.png",      externo: "satelite_robo.png",      w: 2000, h: 1200, cameras: [] },
+            cafe:      { interno: "planta_cafe.png",      externo: "satelite_cafe.png",      w: 2000, h: 1200, cameras: [] },
+            cracker:   { interno: "planta_cracker.png",   externo: "satelite_cracker.png",   w: 2000, h: 1200, cameras: [] },
+            loja:      { interno: "planta_loja.png",      externo: "satelite_loja.png",      w: 2000, h: 1200, cameras: [] },
+            moara:     { interno: "planta_moara.png",     externo: "satelite_moara.png",     w: 2000, h: 1200, cameras: [] }
+        };
+
+        var cameraIcon = L.divIcon({
+            className: "",
+            html: `
+                <div style="
+                    width: 65px;
+                    height: 65px;
+                    background: white;
+                    border: 3px solid black;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+                ">
+                    <img src="icons/camera.jpg" style="width: 50px; height: 50px;">
+                </div>
+            `,
+            iconSize: [65, 65],
+            iconAnchor: [32, 32],
+            popupAnchor: [0, -30]
+        });
+
+        function carregarSetor(nomeSetor) {
+            setorAtual = nomeSetor;
+            var setor = setores[nomeSetor];
+
+            if (plantaAtual) {
+                map.removeLayer(plantaAtual);
+            }
+
+            marcadores.forEach(m => map.removeLayer(m));
+            marcadores = [];
+
+            var bounds = [[0, 0], [setor.h, setor.w]];
+
+            var imagemAtual = (modoVisualizacao === "interno") ? setor.interno : setor.externo;
+
+            plantaAtual = L.imageOverlay(imagemAtual, bounds).addTo(map);
+
+            map.fitBounds(bounds);
+
+            setor.cameras.forEach(cam => {
+                var marker = L.marker(cam.coordenada, { icon: cameraIcon })
+                    .addTo(map)
+                    .bindPopup(`
+                        <div style="text-align:center;">
+                            <b style="font-size:20px;">${cam.nome}</b><br>
+                            <span style="font-size:16px;"><b>Setor:</b> ${cam.setor}</span><br><br>
+                            <img src="${cam.preview}" 
+                                 style="width:350px; border-radius:10px; border:2px solid #ccc;">
+                        </div>
+                    `);
+
+                marcadores.push(marker);
+            });
+
+            // Atualiza texto do botão
+            var btn = document.getElementById("toggleViewBtn");
+            if (modoVisualizacao === "interno") {
+                btn.innerHTML = "🔁 Alternar para Externo";
+            } else {
+                btn.innerHTML = "🔁 Alternar para Interno";
+            }
+        }
+
+        carregarSetor("adm");
+
+        document.getElementById("sectorSelect").addEventListener("change", function() {
+            carregarSetor(this.value);
+        });
+
+        document.getElementById("toggleViewBtn").addEventListener("click", function() {
+            if (modoVisualizacao === "interno") {
+                modoVisualizacao = "externo";
+            } else {
+                modoVisualizacao = "interno";
+            }
+
+            carregarSetor(setorAtual);
+        });
+
+        // Coordenadas
+        var coordsBox = document.getElementById("coordsBox");
+
+        map.on("mousemove", function(e) {
+            var y = Math.round(e.latlng.lat);
+            var x = Math.round(e.latlng.lng);
+
+            coordsBox.innerHTML = `
+                <b>Coordenadas:</b><br>
+                Y: ${y}<br>
+                X: ${x}<br><br>
+                <b>Formato:</b> [${y}, ${x}]
+            `;
+        });
+
+        map.on("click", function(e) {
+            var y = Math.round(e.latlng.lat);
+            var x = Math.round(e.latlng.lng);
+
+            var texto = `[${y}, ${x}]`;
+
+            navigator.clipboard.writeText(texto);
+
+            coordsBox.innerHTML = `
+                <b>Coordenadas copiadas!</b><br><br>
+                <b>Formato:</b> ${texto}<br><br>
+                Cole no campo coordenada da câmera.
+            `;
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -98,9 +98,8 @@ function iniciarMapa() {
         },
 
         portaria: { planta: "planta_portaria.png", w: 2000, h: 1200, cameras: [] },
-        wafer: { planta: "planta_wafer.png", w: 2000, h: 1200, cameras: [] },
         robo: { planta: "planta_robo.png", w: 2000, h: 1200, cameras: [] },
-        cafe: { planta: "planta_cafe.png", w: 2000, h: 1200, cameras: [] },
+        cafe: { planta: "Planta_cafe.png", w: 2000, h: 1200, cameras: [] },
         cracker: { planta: "planta_cracker.png", w: 2000, h: 1200, cameras: [] },
 
         loja: {
@@ -164,7 +163,46 @@ function iniciarMapa() {
                 { nome: "Câmera 9", setor: "Distribuição", coordenada: [988, 442], preview: "previews/cam9_distribuicao.jpg" },
                 { nome: "Câmera 8", setor: "Distribuição", coordenada: [945, 444], preview: "previews/cam8_distribuicao.jpg" }
             ]
-        }
+        },
+
+        wafer: {
+            planta: "planta_wafer.png",
+            w: 2000,
+            h: 1200,
+            cameras: [
+                { nome: "Câmera 1", setor: "wafer", coordenada: [1050, 615], preview: "previews/cam1_wafer.jpg" },
+                { nome: "Câmera 2", setor: "wafer", coordenada: [663, 1289], preview: "previews/cam2_wafer.jpg" },
+                { nome: "Câmera 3", setor: "wafer", coordenada: [416, 1654], preview: "previews/cam3_wafer.jpg" },
+                { nome: "Câmera 4", setor: "wafer", coordenada: [364, 1073], preview: "previews/cam4_wafer.jpg" },
+                { nome: "Câmera 5", setor: "wafer", coordenada: [401, 1003], preview: "previews/cam5_wafer.jpg" },
+                { nome: "Câmera 6", setor: "wafer", coordenada: [751, 458], preview: "previews/cam6_wafer.jpg"  },
+                { nome: "Câmera 7", setor: "wafer", coordenada: [1016, 590], preview: "previews/cam7_wafer.jpg" },
+                { nome: "Câmera 8", setor: "wafer", coordenada: [1029, 262], preview: "previews/cam8_wafer.jpg" },
+                { nome: "Câmera 9", setor: "wafer", coordenada: [1005, 188], preview: "previews/cam9_wafer.jpg" },
+                { nome: "Câmera 10", setor: "wafer", coordenada: [954, 567], preview: "previews/cam10_wafer.jpg"},
+                { nome: "Câmera 11", setor: "wafer", coordenada: [884, 530], preview: "previews/cam11_wafer.jpg" },
+                { nome: "Câmera 12", setor: "wafer", coordenada: [846, 506], preview: "previews/cam12_wafer.jpg" },
+                { nome: "Câmera 13", setor: "wafer", coordenada: [816, 505], preview: "previews/cam13_wafer.jpg" },
+                { nome: "Câmera 14", setor: "wafer", coordenada: [782, 482], preview: "previews/cam14_wafer.jpg" },
+                { nome: "Câmera 15", setor: "wafer", coordenada: [745, 1097], preview: "previews/cam15_wafer.jpg" },
+                { nome: "Câmera 16", setor: "wafer", coordenada: [869, 711], preview: "previews/cam16_wafer.jpg" },
+                { nome: "Câmera 17", setor: "wafer", coordenada: [701, 609], preview: "previews/cam17_wafer.jpg" },
+                { nome: "Câmera 18", setor: "wafer", coordenada: [581, 823], preview: "previews/cam18_wafer.jpg" },
+                { nome: "Câmera 19", setor: "wafer", coordenada: [686, 913], preview: "previews/cam19_wafer.jpg" },
+                { nome: "Câmera 20", setor: "wafer", coordenada: [726, 932], preview: "previews/cam20_wafer.jpg" },
+                { nome: "Câmera 21", setor: "wafer", coordenada: [663, 927], preview: "previews/cam21_wafer.jpg" },
+                { nome: "Câmera 22", setor: "wafer", coordenada: [715, 963], preview: "previews/cam21_wafer.jpg" },
+                { nome: "Câmera 23", setor: "wafer", coordenada: [409, 1121], preview: "previews/cam23_wafer.jpg" }, 
+                { nome: "Câmera 24", setor: "wafer", coordenada: [560, 1231], preview: "previews/cam24_wafer.jpg" },
+                { nome: "Câmera 25", setor: "wafer", coordenada: [552, 1443], preview: "previews/cam25_wafer.jpg" },
+                { nome: "Câmera 26", setor: "wafer", coordenada: [316, 1279], preview: "previews/cam26_wafer.jpg" },
+                { nome: "Câmera 27", setor: "wafer", coordenada: [496, 1442], preview: "previews/cam27_wafer.jpg" },   
+                { nome: "Câmera 28", setor: "wafer", coordenada: [421, 1404], preview: "previews/cam28_wafer.jpg" },
+                { nome: "Câmera 29", setor: "wafer", coordenada: [293, 1332], preview: "previews/cam29_wafer.jpg" },
+                { nome: "Câmera 30", setor: "wafer", coordenada: [234, 1442], preview: "previews/cam30_wafer.jpg" }, 
+                { nome: "Câmera 31", setor: "wafer", coordenada: [472, 1559], preview: "previews/cam31_wafer.jpg"},
+            ]
+        },
 
     };
 
