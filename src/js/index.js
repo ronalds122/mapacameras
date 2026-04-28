@@ -162,7 +162,7 @@ function iniciarMapa() {
             h: 1200,
             cameras: [
                 { nome: "Câmera 9", setor: "Distribuição", coordenada: [988, 442], preview: "previews/cam9_distribuicao.jpg" },
-                { nome: "Câmera 10", setor: "Distribuição", coordenada: [945, 444], preview: "previews/cam10_distribuicao.jpg" }
+                { nome: "Câmera 8", setor: "Distribuição", coordenada: [945, 444], preview: "previews/cam8_distribuicao.jpg" }
             ]
         }
 
