@@ -61,7 +61,26 @@ function iniciarMapa() {
             planta: "planta_recepcao.png", 
             w: 2000, 
             h: 1200, 
-            cameras: [] 
+            cameras: [
+                { nome: "Câmera 1", setor: "recepcao", coordenada: [428, 893], preview: "previews/cam1_recepcao.jpg" },
+                { nome: "Câmera 2", setor: "recepcao", coordenada: [316, 841], preview: "previews/cam2_recepcao.jpg" },
+                { nome: "Câmera 3", setor: "recepcao", coordenada: [389, 883], preview: "previews/cam3_recepcao.jpg" },
+                { nome: "Câmera 4", setor: "recepcao", coordenada: [404, 974], preview: "previews/cam4_recepcao.jpg" },
+                { nome: "Câmera 5", setor: "recepcao", coordenada: [398, 990], preview: "previews/cam5_recepcao.jpg" },
+                { nome: "Câmera 6", setor: "recepcao", coordenada: [450, 1022], preview: "previews/cam6_recepcao.jpg" },
+                { nome: "Câmera 7", setor: "recepcao", coordenada: [283, 829], preview: "previews/cam7_recepcao.jpg" },
+                { nome: "Câmera 8", setor: "recepcao", coordenada: [489, 1061], preview: "previews/cam8_recepcao.jpg" },
+                { nome: "Câmera 9", setor: "recepcao", coordenada: [438, 974], preview: "previews/cam9_recepcao.jpg" },
+                { nome: "Câmera 10", setor: "recepcao", coordenada: [425, 1007], preview: "previews/cam10_recepcao.jpg" },
+                { nome: "Câmera 11", setor: "recepcao", coordenada: [410, 1030], preview: "previews/cam11_recepcao.jpg" },
+                { nome: "Câmera 12", setor: "recepcao", coordenada: [410, 1030], preview: "previews/cam12_recepcao.jpg" },
+                { nome: "Câmera 13", setor: "recepcao", coordenada: [416, 1062], preview: "previews/cam13_recepcao.jpg" },
+                { nome: "Câmera 14", setor: "recepcao", coordenada: [222, 828], preview: "previews/cam14_recepcao.jpg" },
+                { nome: "Câmera 15", setor: "recepcao", coordenada: [194, 950], preview: "previews/cam15_recepcao.jpg" },
+                { nome: "Câmera 16", setor: "recepcao", coordenada: [160, 806], preview: "previews/cam16_recepcao.jpg" },
+
+
+            ] 
         },
 
         recepcao2: {
