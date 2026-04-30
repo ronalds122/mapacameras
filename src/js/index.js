@@ -1,5 +1,5 @@
 var userPadrao = "admin";
-var senhaPadrao = "admin";
+var senhaPadrao = "Cafe@569458";
 
 function login() {
     var user = document.getElementById("username").value;
@@ -116,8 +116,35 @@ function iniciarMapa() {
             ]
         },
 
-        portaria: { planta: "planta_portaria.png", w: 2000, h: 1200, cameras: [] },
-        robo: { planta: "planta_robo.png", w: 2000, h: 1200, cameras: [] },
+        portaria: { planta: "planta_portaria.png", w: 2000, h: 1200, cameras: [
+                { nome: "Câmera 1", setor: "portaria", coordenada: [568, 1212], preview: "previews/cam1_portaria.jpg" },
+                { nome: "Câmera 2", setor: "portaria", coordenada: [609, 1092], preview: "previews/cam2_portaria.jpg" },
+                { nome: "Câmera 3", setor: "portaria", coordenada: [516, 1102], preview: "previews/cam3_portaria.jpg" },
+                { nome: "Câmera 4", setor: "portaria", coordenada: [838, 1036], preview: "previews/cam4_portaria.jpg" },
+                { nome: "Câmera 5", setor: "portaria", coordenada: [661, 859], preview: "previews/cam5_portaria.jpg" },
+                { nome: "Câmera 6", setor: "portaria", coordenada: [677, 956], preview: "previews/cam6_portaria.jpg"  },
+                { nome: "Câmera 7", setor: "portaria", coordenada: [702, 882], preview: "previews/cam7_portaria.jpg" },
+                { nome: "Câmera 8", setor: "portaria", coordenada: [838,1058], preview: "previews/cam8_portaria.jpg" },
+                { nome: "Câmera 9", setor: "portaria", coordenada: [548, 1101], preview: "previews/cam9_portaria.jpg" },
+                { nome: "Câmera 10", setor: "portaria", coordenada: [730, 1041], preview: "previews/cam10_portaria.jpg"},
+
+        ] },
+
+        robo: { planta: "planta_robo.png", w: 2000, h: 1200, cameras: [
+                { nome: "Câmera 1", setor: "robo", coordenada: [150, 971], preview: "previews/cam1_robo.jpg" },
+                { nome: "Câmera 2", setor: "robo", coordenada: [46, 1283], preview: "previews/cam2_robo.jpg" },
+                { nome: "Câmera 3", setor: "robo", coordenada: [366, 609], preview: "previews/cam3_robo.jpg" },
+                { nome: "Câmera 4", setor: "robo", coordenada: [316, 670], preview: "previews/cam4_robo.jpg" },
+                { nome: "Câmera 5", setor: "robo", coordenada: [384, 813], preview: "previews/cam5_robo.jpg" },
+                { nome: "Câmera 6", setor: "robo", coordenada: [324, 767], preview: "previews/cam6_robo.jpg"  },
+                { nome: "Câmera 7", setor: "robo", coordenada: [358, 704], preview: "previews/cam7_robo.jpg" },
+                { nome: "Câmera 8", setor: "robo", coordenada: [383,666 ], preview: "previews/cam8_robo.jpg" },
+                { nome: "Câmera 9", setor: "robo", coordenada: [429, 740], preview: "previews/cam9_robo.jpg" },
+                { nome: "Câmera 10", setor: "robo", coordenada: [257, 883], preview: "previews/cam10_robo.jpg"},
+                { nome: "Câmera 11", setor: "robo", coordenada: [1321, 1121], preview: "previews/cam11_robo.jpg" },
+
+        ] },
+       
         cafe: { planta: "Planta_cafe.png", w: 2000, h: 1200, cameras: [] },
         cracker: { planta: "planta_cracker.png", w: 2000, h: 1200, cameras: [] },
 
