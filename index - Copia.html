@@ -215,6 +215,7 @@
         <option value="cracker">Cracker</option>
         <option value="loja">Loja</option>
         <option value="moara">Moara</option>
+        <option value="area_externa">Area_externa</option>
     </select>
 
     <button id="toggleViewBtn">🔁 Alternar para Externo</button>
@@ -292,7 +293,7 @@
                     { nome: "Câmera 2", setor: "Administrativo", coordenada: [843, 670], preview: "previews/cam2.jpg" },
                     { nome: "Câmera 1", setor: "Administrativo", coordenada: [803, 1201], preview: "previews/cam1.jpg" },
                     { nome: "Câmera 3", setor: "Administrativo", coordenada: [810, 1078], preview: "previews/cam3.jpg" }
-                ]
+            ]
             },
 
             recepcao:  { interno: "planta_recepcao.png",  externo: "satelite_recepcao.png",  w: 2000, h: 1200, cameras: [] },
@@ -303,8 +304,11 @@
             cafe:      { interno: "planta_cafe.png",      externo: "satelite_cafe.png",      w: 2000, h: 1200, cameras: [] },
             cracker:   { interno: "planta_cracker.png",   externo: "satelite_cracker.png",   w: 2000, h: 1200, cameras: [] },
             loja:      { interno: "planta_loja.png",      externo: "satelite_loja.png",      w: 2000, h: 1200, cameras: [] },
-            moara:     { interno: "planta_moara.png",     externo: "satelite_moara.png",     w: 2000, h: 1200, cameras: [] }
-        };
+            moara:     { interno: "planta_moara.png",     externo: "satelite_moara.png",     w: 2000, h: 1200, cameras: [] },
+            area_externa:  { interno: "planta_areaexterna.png",  externo: "satelite_moara.png",     w: 2000, h: 1200, cameras:[] },
+
+
+        }; 
 
         var cameraIcon = L.divIcon({
             className: "",

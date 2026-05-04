@@ -30,10 +30,41 @@ function iniciarMapa() {
 
     map = L.map('map', {
         crs: L.CRS.Simple,
-        minZoom: -2
+        minZoom: -1
     });
 
     var setores = {
+
+        area_externa: {
+            planta: "planta_areaexterna.png",
+            w: 2000,
+            h: 1200,
+            cameras: [
+                { nome: "Câmera 1", setor: "area_externa", coordenada: [1016, 1613], preview: "previews/cam1_areaexterna.jpg" },
+                { nome: "Câmera 2", setor: "area_externa", coordenada: [982, 1630], preview: "previews/cam2_areaexterna.jpg" },
+                { nome: "Câmera 3", setor: "area_externa", coordenada: [115, 843], preview: "previews/cam3_areaexterna.jpg" },
+                { nome: "Câmera 4", setor: "area_externa", coordenada: [102, 860], preview: "previews/cam4_areaextena.jpg" },
+                { nome: "Câmera 5", setor: "area_externa", coordenada: [75, 904], preview: "previews/cam5_areaexterna.jpg" },
+                { nome: "Câmera 6", setor: "area_externa", coordenada: [53, 989], preview: "previews/cam6_areaexterna.jpg" },
+                { nome: "Câmera 7", setor: "area_externa", coordenada: [65, 935], preview: "previews/cam7_areaexterna.jpg" },
+                { nome: "Câmera 8", setor: "area_extena", coordenada: [590, 1508], preview: "previews/cam8_areaexterna.jpg" },
+                { nome: "Câmera 9", setor: "area_externa", coordenada: [623, 1540], preview: "previews/cam9_areaexterna.jpg" },
+                { nome: "Câmera 10", setor: "area_externa", coordenada: [824, 1685], preview: "previews/cam10_areaexterna.jpg" },
+                { nome: "Câmera 11", setor: "area_externa", coordenada: [858, 1628], preview: "previews/cam11_areaexterna.jpg" },
+                { nome: "Câmera 12", setor: "area_externa", coordenada: [668, 1490], preview: "previews/cam12_areaexterna.jpg" },
+                { nome: "Câmera 13", setor: "area_externa", coordenada: [735, 1530], preview: "previews/cam13_areaexterna.jpg" },
+                { nome: "Câmera 14", setor: "area_externa", coordenada: [715, 1510], preview: "previews/cam14_areaexterna.jpg" },
+                { nome: "Câmera 15", setor: "area_externa", coordenada: [1002, 1468], preview: "previews/cam15_areaexterna.jpg" },
+                { nome: "Câmera 16", setor: "area_externa", coordenada: [1057, 1503], preview: "previews/cam16_areaexterna.jpg" },
+                { nome: "Câmera 17", setor: "area_externa", coordenada: [1013, 1620], preview: "previews/cam17_areaexterna.jpg" },
+                { nome: "Câmera 18", setor: "area_externa", coordenada: [597, 1324], preview: "previews/cam18_areaexterna.jpg" },
+                { nome: "Câmera 19", setor: "area_externa", coordenada: [504, 1269], preview: "previews/cam19_areaexterna.jpg" },
+                { nome: "Câmera 20", setor: "area_externa", coordenada: [424, 1224], preview: "previews/cam20_areaexterna.jpg" },
+                { nome: "Câmera 21", setor: "area_externa", coordenada: [947, 1415], preview: "previews/cam21_areaexterna.jpg" },
+                { nome: "Câmera 22", setor: "area_externa", coordenada: [910, 1415], preview: "previews/cam22_areaexterna.jpg" },
+            
+            ]
+        },
 
         adm: {
             planta: "planta_adm.png",
