@@ -30,7 +30,7 @@ function iniciarMapa() {
 
     map = L.map('map', {
         crs: L.CRS.Simple,
-        minZoom: -1
+        minZoom: 0
     });
 
     var setores = {
