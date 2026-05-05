@@ -210,6 +210,7 @@ function iniciarMapa() {
                 { nome: "Cam 29", setor: "cracker", coordenada: [0,0], preview: "previews/cam_cracker.jpg" },
                 { nome: "Cam 30", setor: "cracker", coordenada: [350, 703], preview: "previews/cam30_cracker.jpg" },
                 { nome: "Cam 31", setor: "cracker", coordenada: [425, 813], preview: "previews/cam31_cracker.jpg" },
+                { nome: "Cam 32", setor: "cracker", coordenada: [0,0], preview: "previews/cam32_cracker.jpg" },
 
         ] },
 
