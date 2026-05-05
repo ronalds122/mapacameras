@@ -176,7 +176,8 @@ function iniciarMapa() {
 
         ] },
        
-        cafe: { planta: "planta_cafe.png", w: 2000, h: 1200, cameras: [ ] },
+        cafe: { planta: "planta_cafe.png", w: 2000, h: 1200, cameras: [] },
+        
         cracker: { planta: "planta_cracker.png", w: 2000, h: 1200, cameras: [
                 { nome: "Cam 1", setor: "cracker", coordenada: [712, 769], preview: "previews/cam1_cracker.jpg" },
                 { nome: "Cam 2", setor: "cracker", coordenada: [644, 725], preview: "previews/cam2_cracker.jpg" },
