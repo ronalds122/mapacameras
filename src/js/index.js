@@ -347,8 +347,83 @@ function iniciarMapa() {
                 { nome: "Câmera 24", setor: "estoque", coordenada: [629, 1517], preview: "previews/cam24_estoque.jpg" },
                 
             ]
-        }
+        },
+
+        docas_estoque: {
+            planta: "planta_docas_estoque.png",
+            w: 2000,
+            h: 1200,
+            cameras: [
+                { nome: "Câmera 1", setor: "docas_estoque", coordenada: [964, 855], preview: "previews/cam1_doca.jpg" },
+                { nome: "Câmera 2", setor: "docas_estoque", coordenada: [941, 838], preview: "previews/cam2_doca.jpg" },
+                { nome: "Câmera 3", setor: "docas_estoque", coordenada: [915, 818], preview: "previews/cam3_doca.jpg" },
+                { nome: "Câmera 4", setor: "docas_estoque", coordenada: [893, 806], preview: "previews/cam4_doca.jpg" },
+                { nome: "Câmera 5", setor: "docas_estoque", coordenada: [866, 788], preview: "previews/cam5_doca.jpg" },
+                { nome: "Câmera 6", setor: "docas_estoque", coordenada: [833, 764], preview: "previews/cam6_doca.jpg"  },
+                { nome: "Câmera 7", setor: "docas_estoque", coordenada: [795, 739], preview: "previews/cam7_doca.jpg" },
+                { nome: "Câmera 8", setor: "docas_estoque", coordenada: [758,715], preview: "previews/cam8_doca.jpg" },
+                { nome: "Câmera 9", setor: "docas_estoque", coordenada: [727, 690], preview: "previews/cam9_doca.jpg" },
+                { nome: "Câmera 10", setor: "docas_estoque", coordenada: [672, 663], preview: "previews/cam10_doca.jpg"},
+                { nome: "Câmera 11", setor: "docas_estoque", coordenada: [641, 644], preview: "previews/cam11_doca.jpg" },
+                { nome: "Câmera 12", setor: "docas_estoque", coordenada: [621, 626], preview: "previews/cam12_doca.jpg" },
+                { nome: "Câmera 13", setor: "docas_estoque", coordenada: [594, 607], preview: "previews/cam13_doca.jpg" },
+                { nome: "Câmera 14", setor: "docas_estoque", coordenada: [565, 586], preview: "previews/cam14_doca.jpg" },
+                { nome: "Câmera 15", setor: "docas_estoque", coordenada: [543, 570], preview: "previews/cam15_doca.jpg" },
+                { nome: "Câmera 16", setor: "docas_estoque", coordenada: [515, 553], preview: "previews/cam16_doca.jpg" },
+                { nome: "Câmera 17", setor: "docas_estoque", coordenada: [604, 667], preview: "previews/cam17_doca.jpg" },
+                { nome: "Câmera 18", setor: "docas_estoque", coordenada: [550, 633], preview: "previews/cam18_doca.jpg" },
+                { nome: "Câmera 19", setor: "docas_estoque", coordenada: [496, 534], preview: "previews/cam19_doca.jpg" },
+                { nome: "Câmera 20", setor: "docas_estoque", coordenada: [470, 577], preview: "previews/cam20_doca.jpg" },
+                { nome: "Câmera 21", setor: "docas_estoque", coordenada: [471, 515], preview: "previews/cam21_doca.jpg" },
+                { nome: "Câmera 22", setor: "docas_estoque", coordenada: [445, 567], preview: "previews/cam21_doca.jpg" },
+                { nome: "Câmera 23", setor: "docas_estoque", coordenada: [439, 522], preview: "previews/cam23_doca.jpg" }, 
+                { nome: "Câmera 24", setor: "docas_estoque", coordenada: [430, 583], preview: "previews/cam24_doca.jpg" },
+                { nome: "Câmera 25", setor: "docas_estoque", coordenada: [467, 544], preview: "previews/cam25_doca.jpg" },
+                { nome: "Câmera 26", setor: "docas_estoque", coordenada: [524, 618], preview: "previews/cam26_doca.jpg" },
+                { nome: "Câmera 27", setor: "docas_estoque", coordenada: [580, 615], preview: "previews/cam27_doca.jpg" },
+                { nome: "Câmera 28", setor: "docas_estoque", coordenada: [418, 563], preview: "previews/cam28_doca.jpg" },
+                { nome: "Câmera 29", setor: "docas_estoque", coordenada: [463, 559], preview: "previews/cam29_doca.jpg" },
+                { nome: "Câmera 30", setor: "docas_estoque", coordenada: [1047, 930], preview: "previews/cam30_doca.jpg" },
+                { nome: "Câmera 31", setor: "docas_estoque", coordenada: [0,0], preview: "previews/cam31_doca.jpg" }, 
+                { nome: "Câmera 32", setor: "docas_estoque", coordenada: [1012, 921], preview: "previews/cam32_doca.jpg" },
+
+            ]
+    },
+
+     estoque_embalagem: {
+            planta: "planta_estoque_embalagem.png",
+            w: 2000,
+            h: 1200,
+            cameras: [
+                { nome: "Câmera 1", setor: "estoque_embalagem", coordenada: [1011, 1147], preview: "previews/cam1_embalagem.jpg" },
+                { nome: "Câmera 2", setor: "estoque_embalagem", coordenada: [1055, 1179], preview: "previews/cam2_embalagem.jpg" },
+                { nome: "Câmera 3", setor: "estoque_embalagem", coordenada: [895, 1404], preview: "previews/cam3_embalagem.jpg" },
+                { nome: "Câmera 4", setor: "estoque_embalagem", coordenada: [244, 669], preview: "previews/cam4_embalagem.jpg" },
+                { nome: "Câmera 5", setor: "estoque_embalagem", coordenada: [1012, 1179], preview: "previews/cam5_embalagem.jpg" },
+                { nome: "Câmera 6", setor: "estoque_embalagem", coordenada: [1007, 1250], preview: "previews/cam6_embalagem.jpg"  },
+                { nome: "Câmera 7", setor: "estoque_embalagem", coordenada: [697, 1007], preview: "previews/cam7_embalagem.jpg" },
+                { nome: "Câmera 8", setor: "estoque_embalagem", coordenada: [977,1296], preview: "previews/cam8_embalagem.jpg" },
+                { nome: "Câmera 9", setor: "estoque_embalagem", coordenada: [646, 1080], preview: "previews/cam9_embalagem.jpg" },
+                { nome: "Câmera 10", setor: "estoque_embalagem", coordenada: [939, 1352], preview: "previews/cam10_embalagem.jpg"},
+                { nome: "Câmera 11", setor: "estoque_embalagem", coordenada: [0,0], preview: "previews/cam11_embalagem.jpg" },
+                { nome: "Câmera 12", setor: "estoque_embalagem", coordenada: [901, 1399], preview: "previews/cam12_embalagem.jpg" },
+                { nome: "Câmera 13", setor: "estoque_embalagem", coordenada: [634, 928], preview: "previews/cam13_embalagem.jpg" },
+                { nome: "Câmera 14", setor: "estoque_embalagem", coordenada: [241, 710], preview: "previews/cam14_embalagem.jpg" },
+                { nome: "Câmera 15", setor: "estoque_embalagem", coordenada: [634, 1010], preview: "previews/cam15_embalagem.jpg" },
+                { nome: "Câmera 16", setor: "estoque_embalagem", coordenada: [214, 752], preview: "previews/cam16_embalagem.jpg" },
+                { nome: "Câmera 17", setor: "estoque_embalagem", coordenada: [634, 1139], preview: "previews/cam17_embalagem.jpg" },
+                { nome: "Câmera 18", setor: "estoque_embalagem", coordenada: [188, 808], preview: "previews/cam18_embalagem.jpg" },
+                { nome: "Câmera 19", setor: "estoque_embalagem", coordenada: [628, 1158], preview: "previews/cam19_embalagem.jpg" },
+                { nome: "Câmera 20", setor: "estoque_embalagem", coordenada: [138, 862], preview: "previews/cam20_embalagem.jpg" },
+                { nome: "Câmera 21", setor: "estoque_embalagem", coordenada: [628, 1222], preview: "previews/cam21_embalagem.jpg" },
+                { nome: "Câmera 22", setor: "estoque_embalagem", coordenada: [115, 902], preview: "previews/cam22_embalagem.jpg" },
+                
+            ]
+ 
+    },
     };
+
+
 
     var cameraIcon = L.divIcon({
         className: "",
