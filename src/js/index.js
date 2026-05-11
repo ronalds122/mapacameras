@@ -263,18 +263,12 @@ function iniciarMapa() {
                 { nome: "Cam 25", setor: "Moara", coordenada: [612, 1144], preview: "previews/cam25_moara.jpg" },
                 { nome: "Cam 26", setor: "Moara", coordenada: [583, 1240], preview: "previews/cam26_moara.jpg" },
                 { nome: "Cam 27", setor: "Moara", coordenada: [389, 1128], preview: "previews/cam27_moara.jpg" },
-                { nome: "Cam 28", setor: "Moara", coordenada: [328, 1413], preview: "previews/cam28_moara.jpg" }
+                { nome: "Cam 28", setor: "Moara", coordenada: [328, 1413], preview: "previews/cam28_moara.jpg" },
+                { nome: "Cam 29", setor: "Moara", coordenada: [988, 442], preview: "previews/cam9_distribuicao.jpg" },
+                { nome: "Cam 30", setor: "Moara", coordenada: [945, 444], preview: "previews/cam8_distribuicao.jpg" }
+           
             ]
-        },
-
-        distribuicao: {
-            planta: "planta_distribuicao.png",
-            w: 2000,
-            h: 1200,
-            cameras: [
-                { nome: "Câmera 9", setor: "Distribuição", coordenada: [988, 442], preview: "previews/cam9_distribuicao.jpg" },
-                { nome: "Câmera 8", setor: "Distribuição", coordenada: [945, 444], preview: "previews/cam8_distribuicao.jpg" }
-            ]
+        
         },
 
         wafer: {
